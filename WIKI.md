@@ -76,7 +76,24 @@ Ce workshop a pour objectif de tester empiriquement différentes stratégies d'i
 
 ---
 
-### 3. Diversification Géographique (Nouveau)
+### 3. ETF Synthétiques PEA - Japon & EM accessibles ! (Nouveau)
+
+Grâce aux ETF à réplication synthétique (swap), le Japon et les Marchés Émergents sont désormais **éligibles au PEA** :
+
+| ETF | ISIN | Indice | Frais |
+|-----|------|--------|-------|
+| **Amundi PEA Japon TOPIX** | FR0013411980 | TOPIX | 0.20% |
+| **Amundi PEA Asie Emergente** | FR0013412012 | MSCI EM Asia | 0.30% |
+| **Amundi PEA MSCI EM EMEA** | FR0011440478 | MSCI EM EMEA | 0.55% |
+| **BNP Paribas Easy S&P 500** | FR0011550185 | S&P 500 | 0.14% |
+
+**Réplication synthétique** : L'ETF détient des actions européennes (respecte le quota PEA 75%) + un contrat swap qui réplique la performance de l'indice cible.
+
+[Voir le guide complet PEA](Portefeuille-Optimal-PEA)
+
+---
+
+### 4. Diversification Géographique
 
 **Contexte** : Réduire l'exposition US (risque politique Trump) par allocation multi-régions
 
