@@ -358,6 +358,21 @@ python generate_wiki_charts.py         # Générer les graphiques
 
 ---
 
+## 📚 Navigation Wiki
+
+### Guides Pratiques
+- **[Portefeuille Optimal PEA](Portefeuille-Optimal-PEA)** - ETF synthétiques pour PEA (Japon, EM accessible)
+- **[Composition PEA](Composition-PEA)** - Répartition détaillée par pays/secteur des ETF PEA
+- **[Portefeuille Optimal ETF](Portefeuille-Optimal-ETF)** - Guide pour CTO (compte-titre)
+- **[Contraintes PEA](Contraintes-PEA)** - Spécificités fiscales françaises
+
+### Analyses
+- **[Résultats Détaillés](Résultats-Détailles)** - Tests complets par stratégie
+- **[Graphiques](Graphiques)** - Visualisations des performances
+- **[Conclusions](Conclusions)** - Leçons apprises
+
+---
+
 **Date de création** : 2026-02-14  
 **Auteur** : @hydropix  
 **Version** : 1.0
