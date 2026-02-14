@@ -90,13 +90,17 @@ Genere des graphiques dans le dossier `charts/` :
 ## Resultats Cles
 
 Voir [RESULTATS.md](RESULTATS.md) pour l'analyse complete.
+Voir [OPTIMISATION.md](OPTIMISATION.md) pour le rapport d'optimisation.
 
-**Resume :**
+**Configuration de Base :**
 - Rendement moyen : 127.31% (vs 190.86% pour le S&P 500)
 - Ratio de Sharpe moyen : 8.43 (excellent)
 - Max Drawdown moyen : -8.18% (tres controle)
-- 100% des simulations positives
-- 0% des simulations battent le benchmark
+
+**Configuration Optimale (30 actions / 3 mois / -5% SL) :** ⭐
+- Rendement moyen : **138.57%** (+10% vs base)
+- Ratio de Sharpe : **9.04** (meilleur equilibre)
+- Max Drawdown : **-6.22%** (-23% vs base)
 
 ## Technologies Utilisees
 
