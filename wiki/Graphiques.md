@@ -17,6 +17,35 @@ Tous les graphiques sont disponibles dans le dossier `charts/` du repo principal
 
 ---
 
+## Diversification Geographique
+
+### Performance Cumulee des Strategies
+
+![Diversification Geographique](https://raw.githubusercontent.com/hydropix/FinancialStrategyWorkshop/main/charts/geo_diversification_cumulative.png)
+
+**Ce graphique montre :**
+- **S&P 500 (bleu)** : Surperformance mais drawdown severe (-55% en 2008)
+- **Strategies diversifiees** : Trajectoires plus lisses avec drawdowns reduits (~-33%)
+- **US vs World Dynamique (cyan)** : Meilleur compromis - suit le S&P 500 en limitant les baisses
+
+**Observations cles :**
+- 2008 : Le S&P 500 chute de -55%, les strategies diversifiees de -30% seulement
+- 2020 (COVID) : Rebond plus rapide pour les strategies diversifiees
+- 2022-2024 : Performance comparable avec moindre volatilite
+
+### Correlations entre Regions
+
+| Region vs S&P 500 | Correlation | Interet Diversification |
+|-------------------|-------------|------------------------|
+| ACWI (Monde) | 0.97 | Faible |
+| VEA (Developpe ex-US) | 0.86 | Moderee |
+| IEV (Europe) | 0.82 | Moderee |
+| EPP (Pacifique) | 0.79 | Moderee |
+| EEM (Emergents) | 0.75 | Bonne |
+| **EWJ (Japon)** | **0.72** | **Excellente** |
+
+---
+
 ## Analyse Temporelle
 
 ### Performance par Periode Historique

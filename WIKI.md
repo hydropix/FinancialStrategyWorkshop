@@ -13,11 +13,13 @@ Ce workshop a pour objectif de tester empiriquement différentes stratégies d'i
 1. **Random Selection + Stop-Loss** : Sélection aléatoire avec règle d'éviction
 2. **Momentum** : Achat des actions aux meilleures performances passées
 3. **Momentum Optimisé** : Grid search des hyperparamètres optimaux
+4. **Diversification Géographique** : Allocation multi-régions pour réduire le risque US
 
 ### Marchés Analysés
 
 - 🇺🇸 **États-Unis** (S&P 500) : 2018-2024
 - 🇪🇺 **Europe** (EURO STOXX) : 2010-2024
+- 🌍 **Diversification Géographique** : ETF Monde, Europe, EM, Japon (2007-2024)
 
 ### Méthodologie
 
@@ -74,7 +76,35 @@ Ce workshop a pour objectif de tester empiriquement différentes stratégies d'i
 
 ---
 
-### 3. Momentum Optimisé (Grid Search)
+### 3. Diversification Géographique (Nouveau)
+
+**Contexte** : Réduire l'exposition US (risque politique Trump) par allocation multi-régions
+
+#### Performance des Stratégies (2007-2024)
+
+| Stratégie | Rendement | Max Drawdown | Sharpe | Réduction Risque |
+|-----------|-----------|--------------|--------|------------------|
+| **S&P 500 (Benchmark)** | 10.3%/an | **-55.2%** | 0.52 | - |
+| MSCI All Country World | 7.3%/an | -56.3% | 0.36 | ❌ |
+| **US vs World Dynamique** | **9.6%/an** | **-33.0%** | **0.59** | **✅ -40%** |
+| Equal Weight Global | 7.7%/an | -32.0% | 0.48 | ✅ -42% |
+
+![Diversification Géographique](charts/geo_diversification_cumulative.png)
+
+**Résultat clé** : La stratégie dynamique US vs World réduit le drawdown de **40%** (-33% vs -55%) avec une perte de performance minimale (-0.7%/an).
+
+#### Corrélations entre Régions
+
+| vs S&P 500 | Corrélation | Diversification |
+|------------|-------------|-----------------|
+| ACWI (Monde) | 0.97 | Faible |
+| Europe (IEV) | 0.82 | Modérée |
+| **Japon (EWJ)** | **0.72** | **Meilleure** |
+| EM (EEM) | 0.75 | Bonne |
+
+---
+
+### 4. Momentum Optimisé (Grid Search)
 
 **Méthode** : Test de 24 configurations (3 nb actions × 4 lookbacks × 2 fréquences)
 
@@ -305,8 +335,9 @@ python generate_wiki_charts.py         # Générer les graphiques
 | Peut-on battre le marché avec une stratégie systématique ? | ✅ Oui, mais **seulement sur US** et avec des **frais faibles** |
 | Quelle est la meilleure stratégie testée ? | Momentum (10 actions, 3 mois, trimestriel) sur US |
 | Cette stratégie fonctionne-t-elle partout ? | ❌ Non, **échec complet en Europe** |
-| Que recommandez-vous ? | **ETF World ou S&P 500** pour 99% des investisseurs |
-| Le jeu en vaut-il la chandelle ? | Non, le Buy & Hold est plus simple et quasi aussi performant |
+| Comment réduire le risque US ? | ✅ **Diversification géographique** dynamique (-40% de drawdown) |
+| Que recommandez-vous ? | **ETF World** pour diversification, ou **US vs World Dynamique** pour réduire le risque |
+| Le jeu en vaut-il la chandelle ? | Non, le Buy & Hold reste le plus simple; la diversification géographique est une alternative intéressante |
 
 ---
 

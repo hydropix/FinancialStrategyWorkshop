@@ -8,7 +8,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$WikiRepo = "$RepoName.wiki.git"
+$WikiRepo = "$RepoName.wiki"
 $WikiUrl = "https://github.com/$Username/$WikiRepo"
 
 Write-Host "==========================================" -ForegroundColor Cyan
