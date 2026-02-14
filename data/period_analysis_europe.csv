@@ -1,0 +1,10 @@
+Periode,Start,End,Rendement (%),Volatilite (%),Max DD (%),Jours
+Bulle Internet,2000-01-01,2002-12-31,,,,1166
+Pre-Crise,2003-01-01,2007-06-30,,,,2333
+Crise Financiere,2007-07-01,2009-06-30,,,,1019
+Reprise,2009-07-01,2011-12-31,,,,1674
+Crise Dette Europe,2012-01-01,2012-12-31,,,,760
+Bull Market,2013-01-01,2019-12-31,,,,5329
+COVID-19,2020-01-01,2020-12-31,,,,766
+Post-COVID,2021-01-01,2021-12-31,,,,765
+Inflation/Taux,2022-01-01,2024-12-31,,,,2281
