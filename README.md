@@ -26,21 +26,25 @@ Ce projet permet de tester, comparer et analyser differentes strategies d'invest
 
 ```
 FinancialStrategyWorkshop/
-├── strategies/              # Implementation des strategies
-│   └── random_stoploss.py  # Strategie random + stop-loss
-├── backtesting/            # Moteur de backtest
-├── analysis/               # Outils d'analyse
-├── data/                   # Donnees historiques
-│   ├── download_data.py   # Telechargement YFinance
-│   ├── stock_prices.csv   # Donnees brutes
+├── strategies/
+│   └── random_stoploss.py          # Implementation de la strategie
+├── data/
+│   ├── download_data.py
+│   ├── stock_prices.csv
 │   ├── monte_carlo_results.csv
-│   └── summary_statistics.csv
-├── notebooks/              # Notebooks Jupyter
-├── dashboard/              # Interface Dash (futur)
-├── charts/                 # Graphiques generes
-├── run_strategy.py         # Script principal
-├── visualize_results.py    # Visualisation
-├── requirements.txt        # Dependances
+│   ├── optimized_monte_carlo_results.csv
+│   └── transaction_costs_analysis.csv  # Analyse des frais
+├── charts/
+│   ├── monte_carlo_analysis.png
+│   ├── optimization_heatmaps.png
+│   └── transaction_costs_impact.png    # Impact des frais
+├── run_strategy.py                   # Strategie de base
+├── run_optimized_strategy.py         # Strategie optimisee
+├── optimize_strategy.py              # Grid search
+├── analyze_transaction_costs.py      # Analyse des frais
+├── RESULTATS.md                      # Resultats initiaux
+├── OPTIMISATION.md                   # Rapport d'optimisation
+├── FRAIS_ET_SURPERFORMANCE.md        # ⭐ Analyse frais/surperformance
 └── README.md
 ```
 
@@ -87,20 +91,40 @@ Genere des graphiques dans le dossier `charts/` :
 - Distribution des drawdowns
 - Scatter plot rendement vs risque
 
-## Resultats Cles
+## ⚠️ RESULTATS CLES - A LIRE EN PRIORITE
 
-Voir [RESULTATS.md](RESULTATS.md) pour l'analyse complete.
-Voir [OPTIMISATION.md](OPTIMISATION.md) pour le rapport d'optimisation.
+**❌ La strategie NE SURPERFORME PAS l'indice**, meme sans frais de transaction.
 
-**Configuration de Base :**
-- Rendement moyen : 127.31% (vs 190.86% pour le S&P 500)
-- Ratio de Sharpe moyen : 8.43 (excellent)
-- Max Drawdown moyen : -8.18% (tres controle)
+| | Configuration Base | Configuration Optimale | Benchmark S&P 500 |
+|---|-------------------|------------------------|-------------------|
+| **Rendement** | 123% | 130% | **191%** |
+| **Surperformance** | **-68pp** | **-61pp** | - |
+| **Sharpe Ratio** | 8.5 | 8.9 | 0.9 |
+| **Max Drawdown** | -8% | -6% | -34% |
 
-**Configuration Optimale (30 actions / 3 mois / -5% SL) :** ⭐
-- Rendement moyen : **138.57%** (+10% vs base)
-- Ratio de Sharpe : **9.04** (meilleur equilibre)
-- Max Drawdown : **-6.22%** (-23% vs base)
+**👉 Conclusion :** C'est une strategie **DEFENSIVE** (preservation du capital), pas de **CROISSANCE**.
+
+Voir [FRAIS_ET_SURPERFORMANCE.md](FRAIS_ET_SURPERFORMANCE.md) pour l'analyse complete des frais et surperformance.
+
+### Configuration Optimale (avec frais 0.5%)
+
+| Parametre | Valeur | Impact |
+|-----------|--------|--------|
+| N actions | 30 | Diversification max |
+| Lookback | 6 mois (pas 3) | Moins de transactions = moins de frais |
+| Stop-loss | -10% | Equilibre rendement/risk |
+
+### Impact des Frais de Transaction
+
+La strategie genere **beaucoup de transactions** :
+- Config Base : ~65 transactions sur 7 ans
+- Config Optimisee (3 mois) : ~174 transactions sur 7 ans
+
+**Cout avec 1% de frais par transaction :**
+- Perte de performance : -8 a -13 points de pourcentage
+- Cout total sur $100k : $4,000 - $8,600
+
+**Recommandation :** Si vous utilisez cette strategie, preferez la **configuration Base** (20 actions, 6 mois, -10%) qui genere moins de frais.
 
 ## Technologies Utilisees
 
